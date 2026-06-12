@@ -14,7 +14,7 @@ export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
 
   const bootLines = [
     'SYSTEM://INITIALIZING...',
-    'USER://CREATOR',
+    'USER://HAKASE_SHIRO',
     'ACCESS://GRANTED',
   ];
 

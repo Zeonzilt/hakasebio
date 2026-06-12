@@ -4,10 +4,10 @@ import { animate } from 'animejs';
 import { Wallet, Coffee, Heart, Zap, Gift, X } from 'lucide-react';
 
 const donationOptions = [
-  { icon: Coffee, label: 'Buy Me a Coffee', amount: '$5', href: 'https://ko-fi.com', color: '#22c55e' },
-  { icon: Heart, label: 'Support Monthly', amount: '$10/mo', href: 'https://patreon.com', color: '#ef4444' },
-  { icon: Zap, label: 'Super Charge', amount: '$25', href: 'https://paypal.com', color: '#eab308' },
-  { icon: Gift, label: 'Special Gift', amount: '$50', href: 'https://paypal.com', color: '#ef4444' },
+  { icon: Coffee, label: 'Secangkir Kopi', amount: 'Ko-fi', href: 'https://ko-fi.com', color: '#22c55e' },
+  { icon: Heart, label: 'Socialbuzz', amount: 'Mediashare', href: 'https://patreon.com', color: '#ef4444' },
+  { icon: Zap, label: 'Saweria', amount: 'Mediashare', href: 'https://saweria.co/zeonzilt', color: '#eab308' },
+  { icon: Gift, label: 'Paypal Support', amount: 'Paypal', href: 'paypal.me/zeonzil', color: '#ef4444' },
 ];
 
 function DonationModal({ onClose }: { onClose: () => void }) {

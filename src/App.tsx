@@ -5,8 +5,6 @@ import {
   Twitter,
   Instagram,
   Twitch,
-  Github,
-  Globe,
   Music,
   MessageCircle,
 } from 'lucide-react';
@@ -15,16 +13,15 @@ import AnimatedBackground from './components/AnimatedBackground';
 import SocialLink from './components/SocialLink';
 import Profile3D from './components/Profile3D';
 import DonationMenu from './components/DonationMenu';
+import hakaseImg from './img/Hakase.png';
 
 const socialLinks = [
-  { icon: Youtube, label: 'YouTube', href: 'https://youtube.com' },
-  { icon: Twitch, label: 'Twitch', href: 'https://twitch.tv' },
-  { icon: Twitter, label: 'Twitter / X', href: 'https://twitter.com' },
+  { icon: Youtube, label: 'YouTube', href: 'https://www.youtube.com/@ShironoHakase' },
+  { icon: Twitch, label: 'Twitch', href: 'https://www.twitch.tv/hakaseshiro7' },
+  { icon: Twitter, label: 'Twitter / X', href: 'https://x.com/HakaseShiro' },
   { icon: Instagram, label: 'Instagram', href: 'https://instagram.com' },
-  { icon: Github, label: 'GitHub', href: 'https://github.com' },
-  { icon: Music, label: 'Spotify', href: 'https://spotify.com' },
+  { icon: Music, label: 'Spotify', href: 'https://open.spotify.com/user/31wkz7xsm7ku4phsag67k5ynioje' },
   { icon: MessageCircle, label: 'Discord', href: 'https://discord.gg' },
-  { icon: Globe, label: 'Website', href: 'https://example.com' },
 ];
 
 export default function App() {
@@ -76,8 +73,8 @@ export default function App() {
         {/* 3D Profile section */}
         <div className="menu-section mb-12" style={{ opacity: 0 }}>
           <Profile3D
-            imageUrl="https://images.pexels.com/photos/3586091/pexels-photo-3586091.jpeg?auto=compress&cs=tinysrgb&w=400"
-            name="CREATOR"
+            imageUrl={hakaseImg}
+            name="Hakase Shiro"
           />
         </div>
 
@@ -90,10 +87,10 @@ export default function App() {
               textShadow: '0 0 20px #ef4444, 0 0 40px rgba(239, 68, 68, 0.5)',
             }}
           >
-            CONTENT_CREATOR
+            HAKASE SHIRO
           </h1>
           <p className="text-sm md:text-base font-mono text-gray-400 max-w-sm">
-            Digital creator / Streamer / Developer
+            Digital creator / Streamer / Tech Enthusiast / Horror Fanatic 
           </p>
         </div>
 
@@ -123,7 +120,7 @@ export default function App() {
           <div
             className="flex items-center justify-center gap-4 text-xs font-mono text-gray-700"
           >
-            <span>NODE.VER_2.0</span>
+            <span>Hakase.VER_2.0</span>
             <span className="text-red-500">|</span>
             <span>{new Date().getFullYear()}</span>
           </div>
