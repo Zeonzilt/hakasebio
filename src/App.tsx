@@ -74,7 +74,7 @@ export default function App() {
         <div className="menu-section mb-12" style={{ opacity: 0 }}>
           <Profile3D
             imageUrl={hakaseImg}
-            name="Hakase Shiro"
+            name="Hakase"
           />
         </div>
 
