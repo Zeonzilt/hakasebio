@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { animate } from 'animejs';
+import { playKeyClick, playLineOk, playWelcomeFanfare } from '../utils/sounds';
 
 interface LoadingScreenProps {
   onComplete: () => void;
@@ -11,6 +12,7 @@ export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
   const [typedText, setTypedText] = useState('');
   const [currentLine, setCurrentLine] = useState(0);
   const [loadingPhase, setLoadingPhase] = useState<'typing' | 'loading' | 'complete'>('typing');
+  const fanfarePlayed = useRef(false);
 
   const bootLines = [
     'SYSTEM://INITIALIZING...',
@@ -18,7 +20,7 @@ export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
     'ACCESS://GRANTED',
   ];
 
-  // Typing effect
+  // Typing effect with keyboard sounds
   useEffect(() => {
     if (loadingPhase !== 'typing') return;
     const currentText = bootLines[currentLine];
@@ -28,9 +30,23 @@ export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
     const typeInterval = setInterval(() => {
       if (charIndex <= currentText.length) {
         setTypedText(currentText.slice(0, charIndex));
+
+        // Play click for each character revealed
+        if (charIndex > 0 && charIndex <= currentText.length) {
+          const ch = currentText[charIndex - 1];
+          if (ch === ' ') {
+            playKeyClick('space');
+          } else {
+            playKeyClick('normal');
+          }
+        }
         charIndex++;
       } else {
         clearInterval(typeInterval);
+        // Enter / line-done sound
+        playKeyClick('enter');
+        setTimeout(() => playLineOk(), 80);
+
         setTimeout(() => {
           if (currentLine < bootLines.length - 1) {
             setCurrentLine(prev => prev + 1);
@@ -57,11 +73,19 @@ export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
     return () => clearInterval(interval);
   }, [loadingPhase]);
 
-  // Exit animation
+  // Welcome fanfare + exit animation
   useEffect(() => {
     if (loadingPhase !== 'complete') return;
     const container = containerRef.current;
     if (!container) return;
+
+    // Play fanfare once
+    if (!fanfarePlayed.current) {
+      fanfarePlayed.current = true;
+      playWelcomeFanfare();
+    }
+
+    // Hold welcome screen briefly, then fade out
     setTimeout(() => {
       animate(container, {
         opacity: 0,
@@ -70,7 +94,7 @@ export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
         ease: 'inExpo',
         onComplete,
       });
-    }, 400);
+    }, 1600);
   }, [loadingPhase, onComplete]);
 
   return (
@@ -249,13 +273,23 @@ export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
             )}
 
             {loadingPhase === 'complete' && (
-              <div className="pt-1 text-green-400 flex items-center gap-2">
-                <span className="text-green-500">$</span>
-                <span>WELCOME, CREATOR</span>
-                <span
-                  className="inline-block w-2 h-4 bg-green-500 ml-0.5 align-middle"
-                  style={{ animation: 'blink 0.8s step-end infinite' }}
-                />
+              <div className="pt-2 space-y-1">
+                <div className="text-green-400 flex items-center gap-2">
+                  <span className="text-green-500">$</span>
+                  <span
+                    style={{
+                      textShadow: '0 0 10px #22c55e',
+                      animation: 'welcomeGlow 1s ease-in-out infinite alternate',
+                    }}
+                  >
+                    WELCOME, HAKASE_SHIRO
+                  </span>
+                  <span
+                    className="inline-block w-2 h-4 bg-green-500 ml-0.5 align-middle"
+                    style={{ animation: 'blink 0.8s step-end infinite' }}
+                  />
+                </div>
+                <div className="text-xs text-zinc-600 pl-4">{'>'} Session started. Loading profile...</div>
               </div>
             )}
           </div>
@@ -270,8 +304,8 @@ export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
 
       <style>{`
         @keyframes tunnelPulse {
-          from { opacity: 0.4; transform: translateZ(var(--z)) scale(0.97); }
-          to   { opacity: 0.9; transform: translateZ(var(--z)) scale(1.03); }
+          from { opacity: 0.4; }
+          to   { opacity: 0.9; }
         }
         @keyframes slowSpin {
           from { transform: rotate(0deg); }
@@ -296,6 +330,10 @@ export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
         @keyframes blink {
           0%, 50% { opacity: 1; }
           51%, 100% { opacity: 0; }
+        }
+        @keyframes welcomeGlow {
+          from { text-shadow: 0 0 6px #22c55e; }
+          to   { text-shadow: 0 0 20px #22c55e, 0 0 40px #22c55e; }
         }
       `}</style>
     </div>
