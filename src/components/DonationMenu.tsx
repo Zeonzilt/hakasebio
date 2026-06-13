@@ -4,8 +4,8 @@ import { animate } from 'animejs';
 import { Wallet, Coffee, Heart, Zap, Gift, X } from 'lucide-react';
 
 const donationOptions = [
-  { icon: Coffee, label: 'Secangkir Kopi', amount: 'Ko-fi', href: 'https://ko-fi.com', color: '#22c55e' },
-  { icon: Heart, label: 'Socialbuzz', amount: 'Mediashare', href: 'https://patreon.com', color: '#ef4444' },
+  { icon: Coffee, label: 'Secangkir Kopi', amount: 'Ko-fi', href: 'https://ko-fi.com/hakaseshiro', color: '#22c55e' },
+  { icon: Heart, label: 'Socialbuzz', amount: 'Mediashare', href: 'https://sociabuzz.com/hakaseshiro/tribe', color: '#ef4444' },
   { icon: Zap, label: 'Saweria', amount: 'Mediashare', href: 'https://saweria.co/zeonzilt', color: '#eab308' },
   { icon: Gift, label: 'Paypal Support', amount: 'Paypal', href: 'paypal.me/zeonzil', color: '#ef4444' },
 ];
