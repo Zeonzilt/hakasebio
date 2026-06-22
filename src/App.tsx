@@ -17,12 +17,12 @@ import DonationMenu from './components/DonationMenu';
 import hakaseImg from './img/Hakase.png';
 
 const socialLinks = [
+  { icon: Music2, label: 'TikTok', href: 'https://www.tiktok.com/@haskaseshiro0' },
   { icon: Youtube, label: 'YouTube', href: 'https://www.youtube.com/@ShironoHakase' },
   { icon: Twitch, label: 'Twitch', href: 'https://www.twitch.tv/hakaseshiro7' },
   { icon: Twitter, label: 'Twitter / X', href: 'https://x.com/HakaseShiro' },
   { icon: Instagram, label: 'Instagram', href: 'https://instagram.com' },
   { icon: Music, label: 'Spotify', href: 'https://open.spotify.com/user/31wkz7xsm7ku4phsag67k5ynioje' },
-  { icon: Music2, label: 'TikTok', href: 'https://www.tiktok.com/@haskaseshiro0' },
   { icon: MessageCircle, label: 'Discord', href: 'https://discord.gg' },
 ];
 
