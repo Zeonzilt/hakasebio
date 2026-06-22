@@ -22,7 +22,7 @@ const socialLinks = [
   { icon: Twitter, label: 'Twitter / X', href: 'https://x.com/HakaseShiro' },
   { icon: Instagram, label: 'Instagram', href: 'https://instagram.com' },
   { icon: Music, label: 'Spotify', href: 'https://open.spotify.com/user/31wkz7xsm7ku4phsag67k5ynioje' },
-  { icon: Music2, label: 'TikTok', href: 'https://www.tiktok.com/@hakaseshiro' },
+  { icon: Music2, label: 'TikTok', href: 'https://www.tiktok.com/@haskaseshiro0' },
   { icon: MessageCircle, label: 'Discord', href: 'https://discord.gg' },
 ];
 
