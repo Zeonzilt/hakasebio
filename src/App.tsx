@@ -23,7 +23,7 @@ const socialLinks = [
   { icon: Twitter, label: 'Twitter / X', href: 'https://x.com/HakaseShiro' },
   { icon: Instagram, label: 'Instagram (BELUM ADA)', href: 'https://instagram.com' },
   { icon: Music, label: 'Spotify', href: 'https://open.spotify.com/user/31wkz7xsm7ku4phsag67k5ynioje' },
-  { icon: MessageCircle, label: 'Discord', href: 'https://discord.gg' },
+  { icon: MessageCircle, label: 'Discord (BELUM ADA)', href: 'https://discord.gg' },
 ];
 
 export default function App() {
