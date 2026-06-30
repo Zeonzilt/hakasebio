@@ -7,7 +7,7 @@ const donationOptions = [
   { icon: Coffee, label: 'Secangkir Kopi', amount: 'Ko-fi', href: 'https://ko-fi.com/hakaseshiro', color: '#22c55e' },
   { icon: Heart, label: 'Socialbuzz', amount: 'Mediashare', href: 'https://sociabuzz.com/hakaseshiro/tribe', color: '#ef4444' },
   { icon: Zap, label: 'Saweria', amount: 'Mediashare', href: 'https://saweria.co/zeonzilt', color: '#eab308' },
-  { icon: Gift, label: 'Trakteer', amount: 'Paypal', href: 'paypal.me/zeonzil', color: '#ef4444' },
+  { icon: Gift, label: 'Trakteer', amount: 'Trakteer', href: 'paypal.me/zeonzil', color: '#ef4444' },
 ];
 
 function DonationModal({ onClose }: { onClose: () => void }) {
