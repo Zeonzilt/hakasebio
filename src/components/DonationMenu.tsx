@@ -1,13 +1,14 @@
 import { useRef, useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { animate } from 'animejs';
-import { Wallet, Coffee, Heart, Zap, Gift, X } from 'lucide-react';
+import { Wallet, Coffee, Heart, Zap, Gift, X, Sparkles } from 'lucide-react';
 
 const donationOptions = [
   { icon: Coffee, label: 'Secangkir Kopi', amount: 'Ko-fi', href: 'https://ko-fi.com/hakaseshiro', color: '#22c55e' },
   { icon: Heart, label: 'Socialbuzz', amount: 'Mediashare', href: 'https://sociabuzz.com/hakaseshiro/tribe', color: '#ef4444' },
   { icon: Zap, label: 'Saweria', amount: 'Mediashare', href: 'https://saweria.co/zeonzilt', color: '#eab308' },
   { icon: Gift, label: 'Trakteer', amount: 'Trakteer', href: 'https://trakteer.id/hakaseshiro', color: '#ef4444' },
+  { icon: Sparkles, label: 'Tako.id', amount: 'Support', href: 'https://tako.id/shironohakase', color: '#06b6d4' },
 ];
 
 function DonationModal({ onClose }: { onClose: () => void }) {
