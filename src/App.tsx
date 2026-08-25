@@ -21,9 +21,9 @@ const socialLinks = [
   { icon: Youtube, label: 'YouTube', href: 'https://www.youtube.com/@ShironoHakase' },
   { icon: Twitch, label: 'Twitch', href: 'https://www.twitch.tv/hakaseshiro7' },
   { icon: Twitter, label: 'Twitter / X', href: 'https://x.com/HakaseShiro' },
-  { icon: Instagram, label: 'Instagram (BELUM ADA)', href: 'https://instagram.com' },
+  { icon: Instagram, label: 'Instagram', href: 'https://www.instagram.com/hakaseshiro/' },
   { icon: Music, label: 'Spotify', href: 'https://open.spotify.com/user/31wkz7xsm7ku4phsag67k5ynioje' },
-  { icon: MessageCircle, label: 'Discord', href: 'https://discord.gg/8uDJCNMbW' },
+  { icon: MessageCircle, label: 'Discord', href: 'https://discord.gg/wj52UEaqsV' },
 ];
 
 export default function App() {
